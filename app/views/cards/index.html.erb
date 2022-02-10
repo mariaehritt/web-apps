@@ -1,10 +1,24 @@
-<% numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king", "ace"] %>
+<h1>Welcome to the ENTR-451 Casino!</h1>
+
+<% numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king", "ace"] %>
 <% suits = ["diamonds", "spades", "hearts", "clubs"] %>
 
 
-<%= number1=numbers[rand(0..13)]%>
-<%= suit1=suits[rand(0..3)]%>
+<% number1=numbers[rand(0..12)]%>
+<% suit1=suits[rand(0..3)]%>
+<% number2=numbers[rand(0..12)]%>
+<% suit2=suits[rand(0..3)]%>
+<% number3=numbers[rand(0..12)]%>
+<% suit3=suits[rand(0..3)]%>
+<% number4=numbers[rand(0..12)]%>
+<% suit4=suits[rand(0..3)]%>
+<% number5=numbers[rand(0..12)]%>
+<% suit5=suits[rand(0..3)]%>
 
 <p>
     <img src="/images/cards/<%= number1 %>_of_<%= suit1 %>.svg">
+    <img src="/images/cards/<%= number2 %>_of_<%= suit2 %>.svg">
+    <img src="/images/cards/<%= number3 %>_of_<%= suit3 %>.svg">
+    <img src="/images/cards/<%= number4 %>_of_<%= suit4 %>.svg">
+    <img src="/images/cards/<%= number5 %>_of_<%= suit5 %>.svg">
 </p>
