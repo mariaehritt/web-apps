@@ -4,21 +4,48 @@
 <% suits = ["diamonds", "spades", "hearts", "clubs"] %>
 
 
-<% number1=numbers[rand(0..12)]%>
-<% suit1=suits[rand(0..3)]%>
-<% number2=numbers[rand(0..12)]%>
-<% suit2=suits[rand(0..3)]%>
-<% number3=numbers[rand(0..12)]%>
-<% suit3=suits[rand(0..3)]%>
-<% number4=numbers[rand(0..12)]%>
-<% suit4=suits[rand(0..3)]%>
-<% number5=numbers[rand(0..12)]%>
-<% suit5=suits[rand(0..3)]%>
+# <% number1=numbers[rand(0..12)]%>
+# <% suit1=suits[rand(0..3)]%>
+# <% number2=numbers[rand(0..12)]%>
+# <% suit2=suits[rand(0..3)]%>
+# <% number3=numbers[rand(0..12)]%>
+# <% suit3=suits[rand(0..3)]%>
+# <% number4=numbers[rand(0..12)]%>
+# <% suit4=suits[rand(0..3)]%>
+# <% number5=numbers[rand(0..12)]%>
+# <% suit5=suits[rand(0..3)]%>
 
-<p>
-    <img src="/images/cards/<%= number1 %>_of_<%= suit1 %>.svg">
-    <img src="/images/cards/<%= number2 %>_of_<%= suit2 %>.svg">
-    <img src="/images/cards/<%= number3 %>_of_<%= suit3 %>.svg">
-    <img src="/images/cards/<%= number4 %>_of_<%= suit4 %>.svg">
-    <img src="/images/cards/<%= number5 %>_of_<%= suit5 %>.svg">
-</p>
+
+
+# <p>
+#     <img src="/images/cards/<%= number1 %>_of_<%= suit1 %>.svg">
+#     <img src="/images/cards/<%= number2 %>_of_<%= suit2 %>.svg">
+#     <img src="/images/cards/<%= number3 %>_of_<%= suit3 %>.svg">
+#     <img src="/images/cards/<%= number4 %>_of_<%= suit4 %>.svg">
+#     <img src="/images/cards/<%= number5 %>_of_<%= suit5 %>.svg">
+# </p>
+
+
+<% deck = []
+for number in numbers
+    for suit in suits
+        card = "#{number}_of_#{suit}"
+        deck.push(card)
+    end
+end
+shuffled_deck = deck.shuffle
+%>
+
+# <ul>
+#     <li><%= shuffled_deck[0]%>
+#     <li><%= shuffled_deck[1]%>
+#     <li><%= shuffled_deck[2]%>
+#     <li><%= shuffled_deck[3]%>
+#     <li><%= shuffled_deck[4]%>
+# </ul>
+
+<img src="/images/cards/<%= shuffled_deck[0] %>.svg">
+<img src="/images/cards/<%= shuffled_deck[1] %>.svg">
+<img src="/images/cards/<%= shuffled_deck[2] %>.svg">
+<img src="/images/cards/<%= shuffled_deck[3] %>.svg">
+<img src="/images/cards/<%= shuffled_deck[4] %>.svg">
