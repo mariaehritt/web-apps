@@ -1,0 +1,10 @@
+<% numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king", "ace"] %>
+<% suits = ["diamonds", "spades", "hearts", "clubs"] %>
+
+
+<%= number1=numbers[rand(0..13)]%>
+<%= suit1=suits[rand(0..3)]%>
+
+<p>
+    <img src="/images/cards/<%= number1 %>_of_<%= suit1 %>.svg">
+</p>
